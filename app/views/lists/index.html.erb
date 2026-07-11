@@ -1,6 +1,12 @@
-<h1>Movie Lists</h1>
+<div class="banner">
+  <%= image_tag "landing.png", alt: "woman trying to choose her next movie", class: "banner-img" %>
+  <div class="banner-content">
+    <h1>Movie Lists</h1>
+    <p>Save movies for your next movie night.</p>
+    <%= link_to "Create a new list", new_list_path, class: "btn btn-danger" %>
+  </div>
+</div>
 
-<%= link_to "Create a new list", new_list_path, class: "btn btn-primary" %>
 
 <hr>
 
