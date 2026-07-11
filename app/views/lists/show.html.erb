@@ -1,3 +1,37 @@
 <h1><%= @list.name %></h1>
 
+<%= link_to "Add a movie to the list", new_list_bookmark_path(@list) %>
+
 <%= link_to "Back to Lists", lists_path %>
+
+<% if @list.bookmarks.any? %>
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="movie-card">
+      <h2><%= bookmark.movie.title %></h2>
+
+      <p><strong>Rating:</strong> ⭐ <%= bookmark.movie.rating %></p>
+
+      <p><%= bookmark.movie.overview %></p>
+
+      <p>
+        <strong>Your comment:</strong>
+        <%= bookmark.comment %>
+      </p>
+
+      <% if bookmark.movie.poster_url.present? %>
+        <%= image_tag bookmark.movie.poster_url, width: 200 %>
+      <% end %>
+
+      <%= link_to "Delete",
+          bookmark_path(bookmark),
+          data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          } %>
+
+      <hr>
+    </div>
+  <% end %>
+<% else %>
+  <p>No movies have been added to this list yet.</p>
+<% end %>
