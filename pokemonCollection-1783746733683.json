@@ -1,0 +1,226 @@
+[
+  {
+    "color": "default",
+    "type": "pikachu",
+    "size": "medium",
+    "name": "Millie",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "charmander",
+    "size": "medium",
+    "name": "Cookie",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "squirtle",
+    "size": "medium",
+    "name": "Penny",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "ditto",
+    "size": "medium",
+    "name": "Missy",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "eevee",
+    "size": "medium",
+    "name": "Gus",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "bulbasaur",
+    "size": "medium",
+    "name": "Harley",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "pichu",
+    "size": "medium",
+    "name": "Hugo",
+    "generation": "gen2",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "psyduck",
+    "size": "medium",
+    "name": "Maggie",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "meowth",
+    "size": "medium",
+    "name": "Bruce",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "unown_j",
+    "size": "medium",
+    "name": "Unown J",
+    "generation": "gen2",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "pikachu",
+    "size": "medium",
+    "name": "Zoe",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "bulbasaur",
+    "size": "medium",
+    "name": "Mia",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "squirtle",
+    "size": "medium",
+    "name": "Roxy",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "meowth",
+    "size": "medium",
+    "name": "Rocky",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "ditto",
+    "size": "medium",
+    "name": "Jax",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "pidgey",
+    "size": "medium",
+    "name": "Lucy",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "pikachu",
+    "size": "medium",
+    "name": "Marley",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "ditto",
+    "size": "medium",
+    "name": "Jet",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "bulbasaur",
+    "size": "medium",
+    "name": "Rusty",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "meowth",
+    "size": "medium",
+    "name": "Alfie",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "squirtle",
+    "size": "medium",
+    "name": "Poppy",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "charmander",
+    "size": "medium",
+    "name": "Frankie",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "psyduck",
+    "size": "medium",
+    "name": "Hugo",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "togepi",
+    "size": "medium",
+    "name": "Milly",
+    "generation": "gen2",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "charmander",
+    "size": "medium",
+    "name": "Murphy",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "torchic",
+    "size": "medium",
+    "name": "Willow",
+    "generation": "gen3",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "pikachu",
+    "size": "medium",
+    "name": "Pippa",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  },
+  {
+    "color": "default",
+    "type": "squirtle",
+    "size": "medium",
+    "name": "Mia",
+    "generation": "gen1",
+    "originalSpriteSize": 32
+  }
+]
