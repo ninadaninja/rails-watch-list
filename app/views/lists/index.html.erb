@@ -10,6 +10,16 @@
 
 <hr>
 
+<div class="cards">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list), class: 'text-white text-decoration-none' do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
+        <%= list.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 <ul>
   <% @lists.each do |list| %>
     <li>
