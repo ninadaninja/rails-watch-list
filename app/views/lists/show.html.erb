@@ -1,37 +1,67 @@
 <h1><%= @list.name %></h1>
 
-<%= link_to "Add a movie to the list", new_list_bookmark_path(@list) %>
+<%= link_to "Add a movie to the list" , new_list_bookmark_path(@list), class: "btn btn-danger" %>
 
 <%= link_to "Back to Lists", lists_path %>
 
-<% if @list.bookmarks.any? %>
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="movie-card">
-      <h2><%= bookmark.movie.title %></h2>
+<div class="container py-5">
+  <% if @list.bookmarks.any? %>
+    <div class="row g-4">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="col-12 col-md-6 col-lg-4 d-flex">
+          <div class="card movie-card border-0 shadow-sm w-100 d-flex flex-column justify-content-between overflow-hidden rounded-3">
 
-      <p><strong>Rating:</strong> ⭐ <%= bookmark.movie.rating %></p>
+            <%# 1. Movie Poster Background/Header %>
+            <% if bookmark.movie.poster_url.present? %>
+              <div class="movie-poster-wrapper" style="height: 250px; background-image: url('<%= bookmark.movie.poster_url %>'); background-size: cover; background-position: center;"></div>
+            <% else %>
+              <div class="movie-poster-wrapper d-flex align-items-center justify-content-center bg-dark text-muted" style="height: 250px;">
+                <i class="fa-solid fa-video fa-2x"></i>
+              </div>
+            <% end %>
 
-      <p><%= bookmark.movie.overview %></p>
+            <%# 2. Movie Details %>
+            <div class="card-body p-4 d-flex flex-column justify-content-between flex-grow-1">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h4 class="card-title mb-0 fw-bold"><%= bookmark.movie.title %></h4>
+                  <span class="badge bg-warning text-dark px-2 py-1 fs-6">
+                    ⭐ <%= bookmark.movie.rating %>
+                  </span>
+                </div>
 
-      <p>
-        <strong>Your comment:</strong>
-        <%= bookmark.comment %>
-      </p>
+                <p class="card-text text-muted small mb-3 line-clamp-3">
+                  <%= bookmark.movie.overview %>
+                </p>
+              </div>
 
-      <% if bookmark.movie.poster_url.present? %>
-        <%= image_tag bookmark.movie.poster_url, width: 200 %>
+              <%# 3. User Review / Comment Section %>
+              <div class="bg-light p-3 rounded-3 mb-3 border-start border-danger border-3">
+                <span class="text-uppercase fw-bold text-muted d-block small-caps">Your comment</span>
+                <p class="mb-0 text-dark italic">"<%= bookmark.comment %>"</p>
+              </div>
+
+              <%# 4. Action Footer %>
+              <div class="text-end">
+                <%= link_to bookmark_path(bookmark),
+                    class: "btn btn-outline-danger btn-sm rounded-pill px-3",
+                    data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from this list?"
+                    } do %>
+                  <i class="fa-solid fa-trash-can me-1"></i> Delete
+                <% end %>
+              </div>
+            </div>
+
+          </div>
+        </div>
       <% end %>
-
-      <%= link_to "Delete",
-          bookmark_path(bookmark),
-          data: {
-            turbo_method: :delete,
-            turbo_confirm: "Are you sure?"
-          } %>
-
-      <hr>
+    </div>
+  <% else %>
+    <div class="text-center py-5">
+      <p class="text-muted fs-5">No movies have been added to this list yet.</p>
+      <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-danger rounded-pill px-4" %>
     </div>
   <% end %>
-<% else %>
-  <p>No movies have been added to this list yet.</p>
-<% end %>
+</div>

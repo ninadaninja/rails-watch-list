@@ -1,1 +1,70 @@
 // Specific CSS for your home-page
+body {
+    background-color: black;
+    color: white; /* Recommended for readability */
+}
+
+h1 {
+  font-family: 'Work Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700; /* Optional: makes it look punchy and clean */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-body h3 {
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #ff5a5f;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.card-movie {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-movie:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 10px 25px rgba(220, 53, 69, 0.4); /* Uses a red tint to match Rails/Bootstrap danger buttons */
+
+  cursor: pointer;
+}

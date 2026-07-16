@@ -1,9 +1,47 @@
-<h1>Add a Movie to <%= @list.name %></h1>
+<div class="list-banner-mini py-5 mb-5 bg-dark text-white text-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>'); background-size: cover; background-position: center;">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-0">Add a Movie to <%= @list.name %></h1>
+  </div>
+</div>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.submit "Add Movie", class: "btn btn-primary" %>
-<% end %>
+<%# 2. Form Container %>
+<div class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
 
-<%= link_to "Back to movie lists", lists_path, class: "btn btn-primary" %>
+      <%# Form Card %>
+      <div class="card border-0 shadow-sm rounded-3 p-4 p-md-5 bg-white">
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+
+          <div class="mb-3">
+            <%= f.association :movie,
+                prompt: "Select a movie...",
+                input_html: { class: "form-select rounded-pill" } %>
+          </div>
+
+          <div class="mb-4">
+            <%= f.input :comment,
+                placeholder: "Why are you adding this movie?",
+                input_html: { class: "form-control rounded-3", rows: 3 } %>
+          </div>
+
+          <div class="d-grid mb-3">
+            <%= f.submit "Add Movie", class: "btn btn-danger rounded-pill py-2 fw-semibold" %>
+          </div>
+
+        <% end %>
+
+        <hr class="my-4 text-muted">
+
+        <%# Back Button %>
+        <div class="text-center">
+          <%= link_to list_path(@list), class: "text-muted text-decoration-none small hover-underline" do %>
+            <i class="fa-solid fa-arrow-left me-1"></i> Back to <%= @list.name %>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

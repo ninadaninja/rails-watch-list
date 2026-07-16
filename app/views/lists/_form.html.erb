@@ -1,5 +1,52 @@
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Create List", class: "btn btn-primary" %>
-<% end %>
+<%# 1. Page Header / Mini-Banner %>
+<div class="list-banner-mini py-5 mb-5 bg-dark text-white text-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<%= image_path('theater.png') %>'); background-size: cover; background-position: center;">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-0">Create a New Movie List</h1>
+  </div>
+</div>
+
+<%# 2. Form Container %>
+<div class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+
+      <%# Form Card %>
+      <div class="card border-0 shadow-sm rounded-3 p-4 p-md-5 bg-white">
+        <%= simple_form_for(@list) do |f| %>
+
+          <%# List Name Input %>
+          <div class="mb-3">
+            <%= f.input :name,
+                placeholder: "e.g. Cozy Sunday Sci-Fi",
+                input_html: { class: "form-control rounded-pill px-3" } %>
+          </div>
+
+          <%# Cover Photo Upload %>
+          <div class="mb-4">
+            <%= f.input :photo,
+                as: :file,
+                label: "Upload a cover photo",
+                input_html: { class: "form-control rounded-pill" } %>
+          </div>
+
+          <%# Submit Button %>
+          <div class="d-grid mb-3">
+            <%= f.submit "Create List", class: "btn btn-danger rounded-pill py-2 fw-semibold" %>
+          </div>
+
+        <% end %>
+
+        <hr class="my-4 text-muted">
+
+        <%# Back Button %>
+        <div class="text-center">
+          <%= link_to lists_path, class: "text-muted text-decoration-none small hover-underline" do %>
+            <i class="fa-solid fa-arrow-left me-1"></i> Back to movie lists
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
