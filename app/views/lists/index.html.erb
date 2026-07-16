@@ -14,7 +14,11 @@
     <% @lists.each do |list| %>
       <%= link_to list_path(list), class: 'text-decoration-none text-white' do %>
         <!-- Added 'py-5' and 'h-100' or standard height styles -->
-        <div class="card-category card-movie py-5 d-flex align-items-center justify-content-center" style="min-height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
+        <div class="card-category card-movie py-5 d-flex align-items-center justify-content-center"
+          style="min-height: 200px;
+          background-image:
+          linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+          url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
           <span class="fs-3 fw-bold"><%= list.name %></span>
         </div>
       <% end %>

@@ -1,6 +1,9 @@
-<h1><%= @list.name %></h1>
-
-<%= link_to "Add a movie to the list" , new_list_bookmark_path(@list), class: "btn btn-danger" %>
+<div class="list-banner-mini py-5 mb-5 bg-dark text-white text-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= @list.photo.attached? ? cl_image_path(list.photo.key) : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>); background-size: cover; background-position: center;">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-0"><%= @list.name %></h1>
+  </div>
+</div>
+<%= link_to "Add a movie" , new_list_bookmark_path(@list), class: "btn btn-danger" %>
 
 <%= link_to "Back to Lists", lists_path %>
 
@@ -59,9 +62,11 @@
       <% end %>
     </div>
   <% else %>
+  <div class="text-message">
     <div class="text-center py-5">
-      <p class="text-muted fs-5">No movies have been added to this list yet.</p>
+      <p class="text-white fs-5">No movies have been added to this list yet.</p>
       <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-danger rounded-pill px-4" %>
     </div>
   <% end %>
+  </div>
 </div>
