@@ -3,11 +3,14 @@
     <h1 class="display-5 fw-bold mb-0"><%= @list.name %></h1>
   </div>
 </div>
-<%= link_to "Add a movie" , new_list_bookmark_path(@list), class: "btn btn-danger" %>
 
-<%= link_to "Back to Lists", lists_path %>
-
-<div class="container py-5">
+<div class="container py-2 gap-3">
+  <div class="row gap-2 justify-align-center">
+  <%= link_to "Add a movie" , new_list_bookmark_path(@list), class: "btn btn-danger" %>
+  </div>
+  <div class="text-center py-2">
+  <%= link_to "Back to Lists", lists_path %>
+  </div>
   <% if @list.bookmarks.any? %>
     <div class="row g-4">
       <% @list.bookmarks.each do |bookmark| %>
